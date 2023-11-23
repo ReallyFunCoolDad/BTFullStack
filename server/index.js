@@ -32,13 +32,21 @@ mongoose.connection.on("error", (error) =>
   console.error("MongoDB Connection Error:", error)
 );
 
+const _dirname = path.dirname("");
+const buildPath = path.join(_dirname, "../client/dist");
+
+app.use(express.static(buildPath));
+
 // Create a route for sending emails
 app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../../dist/index.html"), function (err) {
-    if (err) {
-      res.status(500).send(err);
+  res.sendFile(
+    path.join(__dirname, "../client/dist/index.html"),
+    function (err) {
+      if (err) {
+        res.status(500).send(err);
+      }
     }
-  });
+  );
 });
 
 app.post("/api/form/:type/:apiKey", async (req, res) => {
@@ -69,13 +77,12 @@ app.post("/api/form/:type/:apiKey", async (req, res) => {
       },
     });
     const result = await newEntry.save();
-    res.set("Access-Control-Allow-Origin", "https://barnetttechnologies.com");
     res.status(200).send(result);
   } catch (error) {
     res.status(400).send(error);
   }
 });
 
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 3001;
 
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT} ...`));

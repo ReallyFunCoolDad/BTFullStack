@@ -47,7 +47,7 @@ const ProblemForm = () => {
           email: yup.string().email("Invalid email").required("Required"),
         });
 
-  const onSubmit = async (values: any, { setSubmitting }) => {
+  const onSubmit = async (values: any, { setSubmitting }: any) => {
     const key = "HOrDSminglINtIONAlMANTEreStERONyVeLEClINENDOWEAmBi";
 
     try {
@@ -61,7 +61,7 @@ const ProblemForm = () => {
         },
         data: values,
       };
-      const result = await axios(config);
+      await axios(config);
       // go to thank you page.
       navigate("/thankyou");
     } catch (error) {
