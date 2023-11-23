@@ -39,14 +39,11 @@ app.use(express.static(buildPath));
 
 // Create a route for sending emails
 app.get("/*", (req, res) => {
-  res.sendFile(
-    path.join(__dirname, "../client/dist/", "index.html"),
-    function (err) {
-      if (err) {
-        res.status(500).send(err);
-      }
+  res.sendFile(path.join(__dirname, "index.html"), function (err) {
+    if (err) {
+      res.status(500).send(err);
     }
-  );
+  });
 });
 
 app.post("/api/form/:type/:apiKey", async (req, res) => {
