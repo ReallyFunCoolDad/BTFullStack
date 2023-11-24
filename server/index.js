@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 // });
 
 const _dirname = path.dirname("");
-const buildPath = path.join(_dirname, "../../client/dist");
+const buildPath = path.join(_dirname, "../client/dist");
 
 app.use(express.static(buildPath));
 
@@ -40,7 +40,7 @@ mongoose.connection.on("error", (error) =>
 // Create a route for sending emails
 app.get("/*", (req, res) => {
   res.sendFile(
-    path.join(__dirname, "../../client/dist/index.html"),
+    path.join(__dirname, "../client/dist/index.html"),
     function (err) {
       if (err) {
         res.status(500).send(`${err} and ${__dirname}`);
