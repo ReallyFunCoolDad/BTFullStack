@@ -38,7 +38,7 @@ mongoose.connection.on("error", (error) =>
 );
 
 // Create a route for sending emails
-app.get("/*", (req, res) => {
+app.get("*", (req, res) => {
   res.sendFile(
     path.join(__dirname, "../client/dist/index.html"),
     function (err) {
