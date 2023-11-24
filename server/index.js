@@ -43,7 +43,7 @@ app.get("/*", (req, res) => {
     path.join(__dirname, "../client/dist/index.html"),
     function (err) {
       if (err) {
-        res.status(500).send(err, __dirname);
+        res.status(500).send(`${err} and ${__dirname}`);
       }
     }
   );
