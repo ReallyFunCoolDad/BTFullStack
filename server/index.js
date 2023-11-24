@@ -24,6 +24,11 @@ app.use(bodyParser.json());
 //   next();
 // });
 
+const _dirname = path.dirname("");
+const buildPath = path.join(_dirname, "../client/dist");
+
+app.use(express.static(buildPath));
+
 mongoose.connect(process.env.VITE_MONGO_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -32,18 +37,16 @@ mongoose.connection.on("error", (error) =>
   console.error("MongoDB Connection Error:", error)
 );
 
-const _dirname = path.dirname("");
-const buildPath = path.join(_dirname, "../client/dist");
-
-app.use(express.static(buildPath));
-
 // Create a route for sending emails
 app.get("/*", (req, res) => {
-  res.sendFile(path.join(__dirname, "client/dist/index.html"), function (err) {
-    if (err) {
-      res.status(500).send(err);
+  res.sendFile(
+    path.join(__dirname, "../client/dist/index.html"),
+    function (err) {
+      if (err) {
+        res.status(500).send(err, __dirname);
+      }
     }
-  });
+  );
 });
 
 app.post("/api/form/:type/:apiKey", async (req, res) => {
