@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 // });
 
 const _dirname = path.dirname("");
-const buildPath = path.join(_dirname, "../client/dist");
+const buildPath = path.join(_dirname, "../client/dist/");
 
 app.use(express.static(buildPath));
 
