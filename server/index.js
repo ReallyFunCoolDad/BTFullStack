@@ -49,7 +49,7 @@ app.get("*", (req, res) => {
   );
 });
 
-app.post("server/api/form/:type/:apiKey", async (req, res) => {
+app.post("/server/api/form/:type/:apiKey", async (req, res) => {
   const key = req.params["apiKey"];
 
   console.log(key);
