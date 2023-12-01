@@ -63,6 +63,7 @@ app.post("/server/api/form/:type/:apiKey", async (req, res) => {
 
   try {
     const newEntry = Form({
+      status: "pending",
       type,
       firstName,
       lastName,
