@@ -41,7 +41,7 @@ export default function Services() {
             aria-current="page"
             key={item.title}
           >
-            <div className="relative flex flex-col items-center justify-center w-5/6 m-auto mb-4 shadow-xl hoverborder-gray-200 hover:border-2 group rounded-xl">
+            <div className="relative flex flex-col items-center justify-center w-5/6 m-auto mb-4 shadow-xl h-72 hoverborder-gray-200 hover:border-2 group rounded-xl">
               <div className="flex justify-center p-4 mt-4 sm:w-full">
                 <img className="h-16" src={item.icon} alt="House" />
               </div>
