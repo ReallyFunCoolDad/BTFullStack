@@ -30,9 +30,10 @@ const servicesData = [
     price: "$100 per hour",
   },
   {
-    title: "Everything Else",
-    description: "We'll figure it out!",
-    price: "Varies",
+    title: "On-Site Services",
+    description:
+      "We will come to your Home or Business provide IT Services. $100 an hour after the first hour",
+    price: "$120 per visit",
   },
 ];
 
@@ -50,7 +51,7 @@ function Pricing() {
             <div>
               <div className="flex justify-between ">
                 <h3 className="font-semibold">{item.title}</h3>
-                <p className="font-semibold">{item.price}</p>
+                <p className="font-medium">{item.price}</p>
               </div>
 
               <p className="text-gray-500">{item.description}</p>

@@ -23,7 +23,8 @@ const serviceData = [
   {
     title: "Development",
     icon: atom,
-    description: "Custom Applications to Support your Home and Business.",
+    description:
+      "Custom Web Applications and API Integrations to Support your Home and Business.",
     page: "development",
     pricing: "Get a Quote",
   },
@@ -49,14 +50,14 @@ export default function Services() {
               </h2>
               <div className="p-2 rounded-b-xl">
                 <div className="p-2 bg-white rounded-b-xl">
-                  <p className="font-semibold text-center rounded-t-xl">
+                  <p className="text-sm font-semibold text-center text-gray-600 rounded-t-xl">
                     {item.description}
                   </p>
 
                   <div className="flex justify-center w-full p-4 mt-6">
-                    <div className="text-lg font-semibold text-yellow-500">
+                    {/* <div className="text-lg font-semibold text-yellow-500">
                       {item.pricing}
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
