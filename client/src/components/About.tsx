@@ -10,7 +10,7 @@ export default function About() {
         <p className="mt-3 text-xs text-gray-600 sm:text-base">
           We provide IT and Development Solutions for your Home and Business.
         </p>
-        <p className="mt-2 text-sm text-gray-500 sm:text-lg">
+        <p className="mt-2 text-sm text-gray-600 sm:text-lg">
           Choose a service below to get started!
         </p>
       </div>
