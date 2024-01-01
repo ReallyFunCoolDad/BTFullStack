@@ -29,10 +29,7 @@ const buildPath = path.join(_dirname, "../client/dist/");
 
 app.use(express.static(buildPath));
 
-mongoose.connect(process.env.VITE_MONGO_URI, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
+mongoose.connect(process.env.VITE_MONGO_URI, {});
 mongoose.connection.on("error", (error) =>
   console.error("MongoDB Connection Error:", error)
 );
@@ -49,13 +46,12 @@ app.get("*", (req, res) => {
   );
 });
 
-app.post("/server/api/form/:type/:apiKey", async (req, res) => {
+app.post("/api/form/:type/:apiKey", async (req, res) => {
   const key = req.params["apiKey"];
 
-  console.log(key);
-
-  if (key != process.env.VITE_API_KEY) {
+  if (key !== process.env.API_KEY) {
     res.status(500).send("unauthorized");
+    return;
   }
 
   const type = req.params["type"];
