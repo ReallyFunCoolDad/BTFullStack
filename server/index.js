@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
+const helmet = require("helmet");
 const Form = require("./schemas");
 const bodyParser = require("body-parser");
 const path = require("path");
@@ -9,20 +10,7 @@ const app = express();
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
-// app.use((req, res, next) => {
-//   res.header("Access-Control-Allow-Origin", "https://barnetttechnologies.com"); // '*' allows any domain, you might want to restrict it to your front-end's domain in production
-//   res.header(
-//     "Access-Control-Allow-Methods",
-//     "GET, POST, OPTIONS, PUT, PATCH, DELETE"
-//   );
-//   res.header(
-//     "Access-Control-Allow-Headers",
-//     "Content-Type, Authorization, Content-Length, X-Requested-With"
-//   );
-//   res.setHeader("Access-Control-Allow-Credentials", true);
-//   next();
-// });
+app.use(helmet());
 
 const _dirname = path.dirname("");
 const buildPath = path.join(_dirname, "../client/dist/");
