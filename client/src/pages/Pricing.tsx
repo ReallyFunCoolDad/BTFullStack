@@ -1,39 +1,19 @@
 const servicesData = [
   {
-    title: "Virus Cleaning",
-    description: "Virus and Malware removal",
-    price: "$100",
-  },
-  {
-    title: "Data Transfer/Backup",
-    description: "Backup your computer or transfer to another",
-    price: "$100",
-  },
-  {
-    title: "Computer Tune Up",
-    description: "Remove the junk, update and improve performance",
-    price: "$60",
-  },
-  {
-    title: "Hardware Upgrade/Replacment",
-    description: "Varies with part",
-    price: "$60-$200",
-  },
-  {
-    title: "Pickup Fee",
-    description: "$20 for Cheshire, $30 for neighboring towns.",
-    price: "$20-$30",
+    title: "Diagnostic",
+    description: "We will diagnose your IT issues.",
+    price: "$40",
   },
   {
     title: "Consulting",
     description: "Expert advice and solutions for your IT challenges.",
-    price: "$100 per hour",
+    price: "$200 per hour",
   },
   {
     title: "On-Site Services",
     description:
       "We will come to your Home or Business provide IT Services. $100 an hour after the first hour",
-    price: "$120 per visit",
+    price: "$150 per visit",
   },
 ];
 
