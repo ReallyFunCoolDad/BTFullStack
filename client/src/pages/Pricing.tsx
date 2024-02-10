@@ -25,7 +25,7 @@ const servicesData = [
 function Pricing() {
   return (
     <div className="flex flex-col items-center justify-center w-full gap-4 p-2 m-auto mb-6">
-      <h1 className="mt-3 text-3xl font-semibold text-center">Pricing</h1>
+      <h1 className="my-3 text-3xl font-semibold text-center">Pricing</h1>
       <ul className="w-full">
         {servicesData.map((item, index) => (
           <li
