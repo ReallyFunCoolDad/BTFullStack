@@ -15,9 +15,9 @@ export default function Contact() {
           <span className="font-semibold">Email: </span>
           <a
             className="text-blue-500"
-            href="mailto:support@BarnettTechnologies.com"
+            href="mailto:barnetttechnologies@gmail.com"
           >
-            support@BarnettTechnologies.com
+            barnetttechnologies@gmail.com
           </a>
         </div>
       </div>
