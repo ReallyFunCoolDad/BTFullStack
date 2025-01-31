@@ -1,7 +1,6 @@
 import house from "../assets/House.png";
 import laptop from "../assets/Laptop.png";
 import atom from "../assets/Atom.png";
-import building from "../assets/building.png";
 import { Link } from "react-router-dom";
 
 const serviceData = [
