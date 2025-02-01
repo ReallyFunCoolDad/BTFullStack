@@ -1,12 +1,11 @@
-// models/Blog.js
 const mongoose = require("mongoose");
 
+// Ticket Schema (Form)
 const formSchema = new mongoose.Schema({
-  status: String,
+  status: { type: String, default: "pending" },
   type: String,
   firstName: String,
   lastName: String,
-  issue: String,
   phoneNumber: String,
   email: String,
   address: {
@@ -18,4 +17,20 @@ const formSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now },
 });
 
-module.exports = mongoose.model("Form", formSchema);
+const Form = mongoose.model("Form", formSchema);
+
+// Customer Schema
+const customerSchema = new mongoose.Schema({
+  firstName: String,
+  lastName: String,
+  email: { type: String, unique: true, sparse: true },
+  phoneNumber: { type: String, unique: true, sparse: true },
+  tickets: [{ type: mongoose.Schema.Types.ObjectId, ref: "Form" }],
+});
+
+const Customers = mongoose.model("Customer", customerSchema);
+
+module.exports = {
+  Form,
+  Customers,
+};
